@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DID Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+        >
+<mapper namespace="com.pony.springcloud_provider.dao.UserDao">
+    <resultMap id="resultMap" type="com.pony.springcloud.pojo.User">
+        <id property="id" column="id"/>
+        <result property="userPhone" column="user_phone"/>
+        <result property="userEmail" column="user_email"/>
+        <result property="userAddress" column="user_address"/>
+        <result property="userName" column="user_name"/>
+        <result property="userSex" column="user_sex"/>
+        <result property="userIdCard" column="user_idCard"/>
+        <result property="dbDataSource" column="db_datasource"/>
+    </resultMap>
+    <sql id="base_colum">
+        id,user_name,user_address,user_phone,user_email,user_idCard,user_sex,db_datasource
+    </sql>
+    <sql id="base_colum_excuteId">
+        user_name,user_address,user_phone,user_email,user_idCard,user_sex,db_datasource
+    </sql>
+    <insert id="addUser" keyProperty="id" keyColumn="id" useGeneratedKeys="true" parameterType="com.pony.springcloud.pojo.User">
+        insert into user
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="userName !=null">
+                    user_name
+                </if>
+                <if test="userAddress !=null">
+                    user_address
+                </if>
+                <if test="userPhone !=null">
+                    user_phone
+                </if>
+                <if test="userEmail !=null">
+                    user_email
+                </if>
+                <if test="userIdCard !=null">
+                    user_idCard
+                </if>
+                <if test="userSex !=null">
+                    user_sex
+                </if>
+                <if test="dbDataSource !=null">
+                    db_datasource
+                </if>
+
+            </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userName !=null">
+                #{userName,jdbcType=VARCHAR}
+            </if>
+            <if test="userAddress !=null">
+                #{userAddress,jdbcType=VARCHAR}
+            </if>
+            <if test="userPhone !=null">
+                #{userPhone,jdbcType=VARCHAR}
+            </if>
+            <if test="userEmail !=null">
+                #{userEmail,jdbcType=VARCHAR}
+            </if>
+            <if test="userIdCard !=null">
+                #{userIdCard,jdbcType=VARCHAR}
+            </if>
+            <if test="userSex !=null">
+                #{userSex,jdbcType=VARCHAR}
+            </if>
+
+                DATABASE()
+        </trim>
+    </insert>
+    <select id="findAll" resultType="com.pony.springcloud.pojo.User">
+        select
+        <include refid="base_colum">
+        </include>
+        from user
+    </select>
+
+    <select id="findByid" resultType="com.pony.springcloud.pojo.User">
+        select
+        <include refid="base_colum">
+        </include>
+        from user where id = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>
