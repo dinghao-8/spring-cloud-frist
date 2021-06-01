@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-consumer-7000</artifactId>
+    <artifactId>springcloud-consumer-9000</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

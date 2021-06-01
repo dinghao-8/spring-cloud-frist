@@ -6,14 +6,16 @@
     <modules>
         <module>springcloud-api</module>
         <module>springcloud-provider-8000</module>
-        <module>springcloud-consumer-7000</module>
-        <module>register-center</module>
-        <module>register-center</module>
-        <module>springclpid-provider-8001</module>
         <module>springcloud-provider-8002</module>
         <module>springcloud-provider-8001</module>
+        <module>register-center</module>
         <module>register-center2</module>
         <module>register-center3</module>
+        <module>springcloud-consumer-9000</module>
+        <module>springcloud-consumer-9001</module>
+        <module>springcloud-provider-hystriy-8003</module>
+        <module>springcloud-consumer-hystrix-dashboard</module>
+        <module>springcloud-zuul-80</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

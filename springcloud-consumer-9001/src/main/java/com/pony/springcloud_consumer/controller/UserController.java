@@ -4,6 +4,7 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.DiscoveryClient;
 import com.netflix.discovery.shared.Application;
 import com.pony.springcloud.pojo.User;
+import com.pony.springcloud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +17,11 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    RestTemplate restTemplate;
+    UserService userService;
 
-    private static  final  String Rest_url_pre="http://SPRINGCLOUD-PROVIDERUSER";
-//    private static  final  String Rest_url_pre="SPRINGCLOUD-PROVIDERUSER";
     @RequestMapping("/findall")
-    public List<User> findAll(){
 
-        return restTemplate.postForObject(Rest_url_pre+"/user/findall",null, List.class);
+    public List<User> findall(){
+        return this.userService.findall();
     }
 }
