@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: eureka-register
+      label: main
+      uri: http://localhost:5000
+      profile: dev1

@@ -1,26 +1,3 @@
-server:
-  port: 80
-
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:7001/eureka/,http://127.0.0.2:7001/eureka/,http://127.0.0.1:7003/eureka/
-  instance:
-    instance-id: zuul-gateway-10000
-    prefer-ip-address: true
-info:
-  app.name: userProvider
-  compony.name: ponykeji
-
 spring:
   application:
-    name: gateway-zuul
-
-
-zuul:
-  routes:
-    #下面myUser是任意设置，但是后面的serviceId和path不能更改，serviceId对应的是注册中心注册的服务名  path是要映射的路径
-    myUser.serviceId: SPRINGCLOUD-PROVIDERUSER
-    myUser.path: /myUser/**
-  ignored-services: "*"   #忽略所有的服务  不能使用所有的路径访问了，只能使用上面定义的那个路径
+    name: zuul-80

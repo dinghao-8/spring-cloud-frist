@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      label: main
+      name: provider-config
+      uri: http://localhost:5000
+      profile: dev3

@@ -16,6 +16,8 @@
         <module>springcloud-provider-hystriy-8003</module>
         <module>springcloud-consumer-hystrix-dashboard</module>
         <module>springcloud-zuul-80</module>
+        <module>springcloud-config-server-5000</module>
+        <module>springcloud-config-client-5500</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

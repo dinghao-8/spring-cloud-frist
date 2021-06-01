@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: zuul-config
+      profile: dev
+      uri: http://localhost:5000
+      label: main

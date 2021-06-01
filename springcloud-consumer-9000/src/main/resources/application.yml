@@ -2,7 +2,6 @@ server:
   port: 9000
 
 eureka:
-
   client:
     service-url:
       defaultZone: http://registerCenter1:7001/eureka/,http://registerCenter3:7003/eureka/,http://registerCenter2:7002/eureka/

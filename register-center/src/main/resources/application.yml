@@ -1,14 +1,3 @@
-server:
-  port: 7001
-
-eureka:
-  instance:
-#    hostname: 127.0.0.1
-    hostname: registerCenter1
-  client:
-    healthcheck:
-      enabled: true
-    register-with-eureka: false  #是否向eureka注册中心注册自己
-    fetch-registry: false  #如果设置为false，则表示自己是注册中心
-    service-url:
-      defaultZone: http://registerCenter2:7002/eureka/,http://registerCenter3:7003/eureka/
+spring:
+  application:
+    name: register-7000

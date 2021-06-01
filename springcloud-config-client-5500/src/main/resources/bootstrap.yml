@@ -1,0 +1,14 @@
+#系统级别的配置
+spring:
+  cloud:
+    config:
+      #下面四个属性对应的是config服务器网页访问时 需要的四个属性
+      #/{application}/{profile}[/{label}]
+      #/{application}-{profile}.yml
+      #/{label}/{application}-{profile}.yml
+      #/{application}-{profile}.properties
+      #/{label}/{application}-{profile}.properties
+      uri: http://localhost:5000  #config服务器的路径
+      name: config-client  #指定要读取的资源名称
+      profile: test
+      label: main
